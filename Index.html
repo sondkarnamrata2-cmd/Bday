@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Aanya 🐒🎂</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:Arial,sans-serif;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+        url("https://images.unsplash.com/photo-1540573133985-87b6da6d54a9");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.card{
+    width:90%;
+    max-width:440px;
+    padding:32px 24px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.92);
+    border-radius:28px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,0.35);
+}
+
+h1{
+    color:#ff4f81;
+    font-size:31px;
+    margin:10px 0;
+}
+
+h2{
+    color:#ff4f81;
+    font-size:26px;
+}
+
+p{
+    font-size:17px;
+    line-height:1.6;
+    color:#333;
+}
+
+.monkey{
+    font-size:65px;
+    animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+button{
+    border:none;
+    padding:14px 20px;
+    border-radius:30px;
+
+    background:#ff4f81;
+    color:white;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+    margin-top:15px;
+
+    box-shadow:0 5px 15px rgba(255,79,129,0.4);
+}
+
+button:hover{
+    transform:scale(1.06);
+}
+
+#secondScreen,
+#finalWish{
+    display:none;
+}
+
+.monkey-float{
+    position:fixed;
+    font-size:42px;
+    animation:float 4s infinite ease-in-out;
+}
+
+.m1{
+    left:5%;
+    top:8%;
+}
+
+.m2{
+    right:5%;
+    top:12%;
+    animation-delay:1s;
+}
+
+.m3{
+    left:7%;
+    bottom:10%;
+    animation-delay:2s;
+}
+
+.m4{
+    right:7%;
+    bottom:12%;
+    animation-delay:1.5s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-18px) rotate(5deg);
+    }
+}
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    font-size:25px;
+    animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+.small{
+    color:#777;
+    font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Funny Monkeys -->
+<div class="monkey-float m1">🙈</div>
+<div class="monkey-float m2">🙉</div>
+<div class="monkey-float m3">🙊</div>
+<div class="monkey-float m4">🐒</div>
+
+
+<div class="card">
+
+<!-- FIRST SCREEN -->
+
+<div id="firstScreen">
+
+<div class="monkey">
+🐒🙈
+</div>
+
+<h1>🎂 Happy Birthday Aanya ❤️</h1>
+
+<p class="small">
+Advance wish आहे... attitude जरा control मध्ये ठेव 😂🐒
+</p>
+
+<button onclick="showOpenButton()">
+Birthday आहे तुझा, attitude कमी ठेव 😂🎂🐒
+</button>
+
+</div>
+
+
+<!-- SECOND SCREEN -->
+
+<div id="secondScreen">
+
+<div class="monkey">
+🙈🎁🙊
+</div>
+
+<h2>थांब... अजून एक आहे! 😂</h2>
+
+<p>
+एवढ्यात खुश होऊ नकोस... 😌<br>
+अजून surprise बाकी आहे 👀🎁
+</p>
+
+<button onclick="showWish()">
+🎁 Open कर Aanya 🙈😂
+</button>
+
+</div>
+
+
+<!-- FINAL WISH -->
+
+<div id="finalWish">
+
+<div class="monkey">
+🐒🎉🙈
+</div>
+
+<h2>🎂 HAPPY BIRTHDAY AANYA 🎂❤️</h2>
+
+<p>
+Advance मध्येच खूप साऱ्या शुभेच्छा! 🥳✨
+</p>
+
+<p>
+तुझा प्रत्येक दिवस हसण्यात 😂,
+मस्तीमध्ये 🙈 आणि happiness मध्ये 🫶🏻 जावो!
+</p>
+
+<p>
+नेहमी असाच हसत राहा 😜,
+मस्त राहा 😎 आणि सगळ्यांना
+परेशान करत राहा! 😂🐒
+</p>
+
+<h2>
+🎂✨ HAPPY BIRTHDAY IN ADVANCE, AANYA! ❤️🙈
+</h2>
+
+</div>
+
+</div>
+
+
+<script>
+
+function showOpenButton(){
+
+    document.getElementById("firstScreen").style.display="none";
+
+    document.getElementById("secondScreen").style.display="block";
+}
+
+
+function showWish(){
+
+    document.getElementById("secondScreen").style.display="none";
+
+    document.getElementById("finalWish").style.display="block";
+
+    createConfetti();
+}
+
+
+function createConfetti(){
+
+    const emojis=[
+        "🎉",
+        "🎊",
+        "✨",
+        "❤️",
+        "💖",
+        "🎂",
+        "🥳",
+        "🐒",
+        "🙈",
+        "🙉",
+        "🙊",
+        "😂"
+    ];
+
+    for(let i=0;i<70;i++){
+
+        const confetti=document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.innerHTML=
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+        confetti.style.left=
+        Math.random()*100+"vw";
+
+        confetti.style.animationDuration=
+        (Math.random()*2+2)+"s";
+
+        confetti.style.animationDelay=
+        Math.random()*1.5+"s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },5000);
+    }
+}
+
+</script>
+
+</body>
+</html>
